@@ -1,0 +1,30 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.background{
+	background: #4f46e5 !important;
+
+
+  .h2{
+  color:#4f46e5 
+  }
+  .link{
+  color:black 
+  }
+  .forget{
+  color:black 
+  }
+  .remember{
+  color:#4f46e5  !important
+  }
+  .button{
+   color:#4f46e5;
+   background-color:white;
+
+   &:hover{
+   color:#4f46e5;
+   background-color:grey
+   }
+  }
+
+}

@@ -8,6 +8,10 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import "stylesheet/application"
+import "stylesheet/cutome"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
