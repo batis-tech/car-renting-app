@@ -1,0 +1,116 @@
+
+
+<!-- component -->
+<div>
+
+    <div class="flex h-screen overflow-y-hidden bg-white" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
+       <div
+        x-ref="loading"
+        class="fixed inset-0 z-50 flex items-center justify-center text-white bg-black bg-opacity-50"
+        style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)"
+      >
+        Loading.....
+      </div>
+     <%= render 'business/sidebar'%>
+      <div class="flex flex-col flex-1 h-full overflow-hidden">
+        <!-- Navbar -->
+        <%= render 'business/header'%>
+        <!-- Main content -->
+        <main class="flex-1 max-h-full p-5 overflow-hidden overflow-y-scroll">
+          <!-- Main content header -->
+          <div
+            class="flex flex-col items-start justify-between pb-6 space-y-4 border-b lg:items-center lg:space-y-0 lg:flex-row"
+          >
+            <h1 class="text-2xl font-semibold whitespace-nowrap">Cars</h1><%= link_to 'New Car', new_car_path ,class:"items:left focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 focus:bg-indigo-800 focus:outline-none w-full sm:w-auto bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-3 text-sm mt-6" %>
+
+          </div>
+          <p id="notice"><%= notice %></p>
+
+          <!-- Start Content -->
+          <div class="grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4">
+            <% @cars.each do |car| %>
+              <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg">
+                <div class="flex items-start justify-between">
+                  <div class="flex flex-col space-y-2">
+                    <span class="text-gray-400"><%= car.model %></span>
+                    <span class="text-lg font-semibold">100,221</span>
+                  </div>
+                  <div class="p-10 bg-gray-200 rounded-md"></div>
+                </div>
+                <div>
+                  <span class="inline-block px-2 text-sm text-white bg-green-300 rounded">14%</span>
+                  <span>from 2019</span>
+                </div>
+              </div>
+              <% end %> 
+          </div>
+        </main>
+        <!-- Main footer -->
+        <footer class="flex items-center justify-between flex-shrink-0 p-4 border-t max-h-14">
+          <div>K-WD &copy; 2021</div>
+          <div class="text-sm">
+            Made by batis
+           
+          </div>
+
+        </footer>
+      </div>
+
+      <!-- Setting panel button -->
+      <div>
+        <button
+          @click="isSettingsPanelOpen = true"
+          class="fixed right-0 px-4 py-2 text-sm font-medium text-white uppercase transform rotate-90 translate-x-8 bg-gray-600 top-1/2 rounded-b-md"
+        >
+          Settings
+        </button>
+      </div>
+
+      <!-- Settings panel -->
+      <div
+        x-show="isSettingsPanelOpen"
+        @click.away="isSettingsPanelOpen = false"
+        x-transition:enter="transition transform duration-300"
+        x-transition:enter-start="translate-x-full opacity-30  ease-in"
+        x-transition:enter-end="translate-x-0 opacity-100 ease-out"
+        x-transition:leave="transition transform duration-300"
+        x-transition:leave-start="translate-x-0 opacity-100 ease-out"
+        x-transition:leave-end="translate-x-full opacity-0 ease-in"
+        class="fixed inset-y-0 right-0 flex flex-col bg-white shadow-lg bg-opacity-20 w-80"
+        style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)"
+      >
+        <div class="flex items-center justify-between flex-shrink-0 p-2">
+          <h6 class="p-2 text-lg">Settings</h6>
+          <button @click="isSettingsPanelOpen = false" class="p-2 rounded-md focus:outline-none focus:ring">
+            <svg
+              class="w-6 h-6 text-gray-600"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex-1 max-h-full p-4 overflow-hidden hover:overflow-y-scroll">
+          <span>Settings Content</span>
+          <!-- Settings Panel Content ... -->
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+    <script>
+      const setup = () => {
+        return {
+          loading: true,
+          isSidebarOpen: false,
+          toggleSidbarMenu() {
+            this.isSidebarOpen = !this.isSidebarOpen
+          },
+          isSettingsPanelOpen: false,
+          isSearchBoxOpen: false,
+        }
+      }
+    </script>
+</div>
