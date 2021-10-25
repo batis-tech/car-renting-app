@@ -6,13 +6,13 @@
 
 
   .h2{
-  color:#4f46e5 
+  color:#4f46e5
   }
   .link{
-  color:black 
+  color:black
   }
   .forget{
-  color:black 
+  color:black
   }
   .remember{
   color:#4f46e5  !important
@@ -27,4 +27,51 @@
    }
   }
 
+}
+.card-main{
+	height: 14rem
+}
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+	.form-inline label {
+	  margin: 5px 10px 5px 0;
+}
+
+	input {
+	  vertical-align: middle;
+	  margin: 5px 10px 5px 0;
+	  padding: 10px;
+	  background-color: #fff;
+	  border: 1px solid #ddd;
+	}
+
+	button {
+	  padding: 10px 20px;
+	  background-color: dodgerblue;
+	  border: 1px solid #ddd;
+	  color: white;
+	}
+
+	button:hover {
+	  background-color: royalblue;
+	}
+}
+
+
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.select{
+	height: 2rem;
+	border: 1px solid #e6e6e6;
 }

@@ -3,7 +3,7 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    @cars = Car.all
+    @car = Car.where(user_id: current_user.id)
   end
 
   # GET /cars/1 or /cars/1.json
@@ -13,9 +13,10 @@ class CarsController < ApplicationController
   # GET /cars/new
   def new
     @car = Car.new
-    @array_of_caryears = []
-    @array_of_carmakes = []
-    @array_of_carmodels = []
+    @array_of_caryears = ['2021']
+    @array_of_carmakes = ['Audi']
+    @array_of_carmodels = ['233']
+    @user = current_user.id
   end
 
   # GET /cars/1/edit
@@ -64,9 +65,9 @@ class CarsController < ApplicationController
     def set_car
       @car = Car.find(params[:id])
     end
-
     # Only allow a list of trusted parameters through.
     def car_params
-      params.require(:car).permit(:name, :model, :image, :publish, :user_id)
+      params.require(:car).permit(:carmakes, :carmodels, :image, :caryears, :user_id, :image_cache,:price)
     end
+
 end

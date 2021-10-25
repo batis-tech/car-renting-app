@@ -1,0 +1,64 @@
+<%= render 'header' %>
+<br>
+<div class="container mx-auto mt-5 ">
+  <div class="h-96 mb-28" >
+    <div id="card" class="card-main mb-14 h-64">
+      <!-- container for all cards -->
+      <div class="container w-100 lg:w-5/5 mx-auto ">
+        <!-- card -->
+        <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden bg-white rounded-lg shadow-xl  justify-center items-center">
+          <!-- media -->
+
+          <div class="h-64 md:w-2/4 flex border-r-2 border-gray-50">
+            <%= image_tag @car.image.url ,class:"m-8 inset-0 h-3/5 w-1/2"%>
+            <div class="w-1/2 mt-16">
+              <h3 class="font-semibold text-lg leading-tight truncate "><%= @car.carmakes %>
+                <%= @car.carmodels %></h3>
+              <h3 class="font-semibold text-lg leading-tight truncate text-right -m-5 mr-3"><%= @car.caryears %></h3><br>
+              <p class="text-xs text-gray-500 uppercase tracking-wide  mt-2 mt-10">or similar car from the category</p>
+            </div>
+          </div>
+          <!-- content -->
+          <div class="md:w-1/4 py-4 px-6 text-gray-800 flex flex-col mt-14 border-r-2 border-gray-50 justify-center items-center">
+            <img src="" alt="">
+            <img src="https://image.shutterstock.com/image-vector/car-rental-logo-260nw-737602525.jpg" class="m-8 inset-0 h-5/5 w-2/4">
+          </div>
+          <div class="md:w-1/4 py-4 px-6 text-gray-800 flex flex-col justify-center items-center">
+            <h3 class="font-semibold text-lg leading-tight truncate">$<%= @car.price %>
+              <small class="text-xs text-gray-500"> /per day</small>
+            </h3>
+          </div>
+        </div>
+        <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden bg-white rounded-lg shadow-xl  justify-center items-center">
+          <!-- media -->
+          <div class="h-64 md:w-2/4 flex border-r-2 border-gray-50  justify-start items-center">
+            <div class="w-2/2 mt-16">
+              <p class="text-xs text-gray-500 uppercase tracking-wide ml-4 -mt-8">From:
+                <%= @from %>
+                | To:
+                <%= @to %>
+                | <small class="font-semibold">Number of days: <%= @total %></small>
+                </p>
+            </div>
+          </div>
+          <!-- content -->
+          <div class="md:w-1/4  text-gray-800 flex flex-col  border-r-2 border-gray-50 justify-center ml-6 ">
+            <h3 class="text-sm text-gray-900 leading-tight truncate text-left flex mb-2"><%= image_tag ("car1.png") ,class:"w-4 h-4 text-gray-400 mr-2" %> <%= @car.user.companyname %> </h3>
+            <h3 class="text-sm text-gray-900 leading-tight truncate text-left flex mb-2"><%= image_tag ("place.png") ,class:"w-4 h-4 text-gray-400 mr-2" %> <%= @car.user.country %>, <%= @car.user.city %>, <%= @car.user.address %> </h3>
+            <h3 class="text-sm text-gray-900 leading-tight truncate text-left flex mb-2"><%= image_tag ("phone-call.png") ,class:"w-4 h-4 text-gray-400 mr-2" %> <%= @car.user.phone %> </h3>
+          </div>
+          <div class="md:w-1/4 py-4 px-6 text-gray-800 flex flex-col justify-center items-center">
+            <h3 class="font-semibold text-lg leading-tight truncate">$<%= @totalPrice %>
+              <small class="text-xs text-gray-500">
+                /Total</small>
+            </h3>
+            <%= submit_tag "Check out", class:"mt-4 group relative w-2/4 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2
+            focus:ring-indigo-500" %>
+          </div>
+        </div>
+        <!--/ card-->
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'footer' %>
