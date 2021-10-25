@@ -26,6 +26,9 @@ def book
     @book = Book.new
 
 end
+ def booking
+  
+ end
 # def check_signed_in
 #   redirect_to business_path if user_signed_in?
 # end
