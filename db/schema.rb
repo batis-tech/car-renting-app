@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_25_085032) do
+ActiveRecord::Schema.define(version: 2021_10_25_190641) do
 
   create_table "books", force: :cascade do |t|
     t.string "price"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2021_10_25_085032) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "image_cache"
     t.integer "price"
+    t.string "stripe_product_id"
+    t.string "currency"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 

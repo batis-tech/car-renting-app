@@ -19,15 +19,30 @@ end
 def book
     @from = params[:dateform]
     @to = params[:dateto]
-    @total = (@to.to_date - @from.to_date ).to_i
+    @total = (@to.to_d - @from.to_d ).to_i
     @price = params[:price].to_i
     @totalPrice = (@price * @total)
     @car = Car.find(params[:id])
     @book = Book.new
 
 end
- def booking
-  
+
+ def create
+  @car = Car.find(params[:id])
+   @session = Stripe::Checkout::Session.create({
+    customer: current_user.strip_cutomer_id,
+    payment_method_types: ['card'],
+    line_items: [{
+    name:@car.carmakes,
+    amount:@car.price,
+    currency:"usd",
+    quantity:1
+  }],
+  mode: 'payment',
+  success_url: root_url,
+  cancel_url: root_url,
+});
+   redirect_to @session.url
  end
 # def check_signed_in
 #   redirect_to business_path if user_signed_in?
