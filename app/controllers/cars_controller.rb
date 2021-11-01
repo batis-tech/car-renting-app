@@ -1,9 +1,10 @@
 class CarsController < ApplicationController
   before_action :set_car, only: %i[ show edit update destroy ]
+  before_action :restrict, only: %i[index show edit update destroy]
 
   # GET /cars or /cars.json
   def index
-    @car = Car.where(user_id: current_user.id)
+    @car = Car.where(user_id: @current_user.id)
   end
 
   # GET /cars/1 or /cars/1.json
@@ -69,5 +70,14 @@ class CarsController < ApplicationController
     def car_params
       params.require(:car).permit(:carmakes, :carmodels, :image, :caryears, :user_id, :image_cache,:price,:stripe_product_id)
     end
+
+    def restrict
+    if @current_user == current_client
+      authenticate_client!
+    elsif @current_user == current_user
+      root_path
+    end
+  end
+
 
 end

@@ -10,8 +10,7 @@ import "channels"
 
 import "stylesheet/application"
 require("packs/cutome")
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-
