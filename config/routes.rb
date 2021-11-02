@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'booking'=>'home#create', as: :booking
   get 'invoice'=>'profile#invoice', as: :invoice
   get 'customer'=>'customer#index', as: :customer
+  get 'states'=>'home#index'
 
 
 

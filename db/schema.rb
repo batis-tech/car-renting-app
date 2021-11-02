@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_31_172326) do
+ActiveRecord::Schema.define(version: 2021_11_02_141803) do
 
   create_table "books", force: :cascade do |t|
     t.string "price"
@@ -68,10 +68,10 @@ ActiveRecord::Schema.define(version: 2021_10_31_172326) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "fname"
     t.string "lname"
-    t.string "city"
+    t.string "state_cont"
     t.string "address"
     t.string "phone"
-    t.string "country"
+    t.string "country_cont"
     t.string "companyname"
     t.string "image"
     t.string "strip_cutomer_id"

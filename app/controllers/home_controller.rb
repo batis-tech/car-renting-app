@@ -2,13 +2,16 @@ class HomeController < ApplicationController
 
 	# before_action :check_signed_in
 def index
-  @search= Car.ransack (params[:q])
+  @search= User.ransack (params[:q])
   @searchs = @search.result(distink: true)
   @car = Car.limit(4)
+
+
 end
 
 def search
-  @search= Car.ransack (params[:q])
+  @search= User.ransack (params[:q])
+    @search= Car.ransack (params[:q])
   @searchs = @search.result(distink: true)
   @array_of_caryears = ['2021']
   @array_of_carmakes = ['Audi']

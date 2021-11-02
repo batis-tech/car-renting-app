@@ -24,9 +24,9 @@ class User < ApplicationRecord
   def assign_default_role
    @user = User.where(role: 2 )
    if @user
-   self.add_role :admin
+   self.add_role :customer
   else
-    self.add_role :customer
+    self.add_role :admin
   end
  end
 
