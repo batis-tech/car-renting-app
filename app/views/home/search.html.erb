@@ -4,16 +4,17 @@
   <%= f.text_field :carmakes_cont ,class:"shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-1/6",placeholder:"Maker" %>
   <%= f.text_field :carmodels_cont ,class:"shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-1/6",placeholder:"Model" %>
   <%= f.text_field :caryears_cont ,class:"shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-1/6",placeholder:"Year" %>
-  <%= date_field_tag :from ,params[:from] ,class:"shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-1/6"%>
-  <%= date_field_tag :to ,params[:to] ,class:"shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-1/6"%>
-  <%= submit_tag "Search", class:"mt-4 group relative w-1/7  justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2
+  <%= date_field_tag :from ,params[:from],value: Time.now.strftime('%Y-%m-%d') ,class:"shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-1/6"%>
+  <%= date_field_tag :to ,params[:to],value: Time.now.strftime('%Y-%m-%d') ,class:"shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-1/6"%>
+  <%= submit_tag "Search", class:"mt-4 group relative w-1/7 justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2
   focus:ring-indigo-500" %>
   <h1></h1>
 <% end %>
-<%  @searchs.each do |car| %>
-<%= form_tag(book_path(dateform: params[:from],dateto: params[:to],id: car.id,price: car.price)) do |f| %>
+  </div>
 <div class="overflow-auto h-96 mt-9">
-    <div id="card" class="card-main mb-14">
+  <%  @searchs.each do |car| %>
+      <%= form_tag(book_path(dateform: params[:from],dateto: params[:to],id: car.id,price: car.price)) do |f| %>
+      <div id="card" class="card-main mb-14">
       <!-- container for all cards -->
       <div class="container w-100 lg:w-5/5 mx-auto flex flex-col">
         <!-- card -->
@@ -22,7 +23,8 @@
           <div class="h-64 md:w-2/4 flex border-r-2 border-gray-50">
             <%= image_tag car.image.url ,class:"m-8 inset-0 h-3/5 w-1/2"%>
             <div class="w-1/2 mt-16">
-              <h3 class="font-semibold text-lg leading-tight truncate "><%= car.carmakes %>  <%= car.carmodels %></h3>
+              <h3 class="font-semibold text-lg leading-tight truncate "><%= car.carmakes %>
+                <%= car.carmodels %></h3>
               <h3 class="font-semibold text-lg leading-tight truncate text-right -m-5 mr-3"><%= car.caryears %></h3><br>
               <p class="text-xs text-gray-500 uppercase tracking-wide  mt-2 mt-10">or similar car from the category</p>
             </div>
@@ -46,8 +48,10 @@
       </div>
     </div>
   <% end %>
+  <% end %>
+
 </div>
-</div>
-<% end %>
+
+
 
 <%= render 'footer' %>

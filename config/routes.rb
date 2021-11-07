@@ -2,16 +2,18 @@ Rails.application.routes.draw do
 
   get 'profile/index'
   resources :cars
+  resources :werbhooks ,only: [:create]
 
   get 'business/index', as: :business
   devise_for :users
   devise_for :clients, path: 'clients'
   get 'search' => 'home#search', as: :search
   post'book'=>'home#book',as: :book
-  get 'booking'=>'home#create', as: :booking
+  post 'booking'=>'home#create', as: :booking
   get 'invoice'=>'profile#invoice', as: :invoice
   get 'customer'=>'customer#index', as: :customer
   get 'states'=>'home#index'
+
 
 
 

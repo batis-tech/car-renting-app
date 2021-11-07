@@ -28,6 +28,7 @@
           <!-- Start Content -->
           <div class="grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4">
             <% @car.each do |car| %>
+                <%= link_to car_path(car.id) do %>
               <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg">
                 <div class="flex items-start justify-between">
                   <div class="flex flex-col space-y-2">
@@ -37,10 +38,13 @@
                   <%= image_tag car.image.url ,class:" bg-gray-200 rounded-md", style:"width: 8rem;height:8rem" %>
                 </div>
                 <div>
+
                   <span class="inline-block px-2 text-sm text-white bg-green-300 rounded"><%= car.caryears %></span>
+
                   <span>$<%= car.price %></span>
                 </div>
               </div>
+              <% end %>
               <% end %>
           </div>
         </main>

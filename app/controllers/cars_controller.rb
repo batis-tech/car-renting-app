@@ -4,7 +4,7 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    @car = Car.where(user_id: @current_user.id)
+    @car = Car.where(user_id: current_client.id)
   end
 
   # GET /cars/1 or /cars/1.json
@@ -17,7 +17,7 @@ class CarsController < ApplicationController
     @array_of_caryears = ['2021']
     @array_of_carmakes = ['Audi']
     @array_of_carmodels = ['233']
-    @user = current_user.id
+    @user = current_client.id
   end
 
   # GET /cars/1/edit

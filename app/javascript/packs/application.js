@@ -12,6 +12,8 @@ import "stylesheet/application"
 require("packs/cutome")
 require("packs/country")
 require("packs/client_country")
+require("packs/maker")
+require("packs/purchases")
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

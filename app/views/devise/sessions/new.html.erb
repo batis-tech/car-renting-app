@@ -14,7 +14,7 @@
         <h3 class="text-4xl pt-8 leading-tight text-white text-center">Renter Line</h3>
       </div>
     </div>
-    <form id="login" class="w-full lg:w-1/2 flex justify-center bg-white dark:bg-gray-900">
+    <div id="login" class="w-full lg:w-1/2 flex justify-center bg-white dark:bg-gray-900">
       <div class="w-full sm:w-4/6 md:w-3/6 lg:w-2/3 text-gray-800 dark:text-gray-100 flex flex-col justify-center px-2 sm:px-0 py-16">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
@@ -52,6 +52,6 @@
 
       <%= render "devise/shared/links" %>
     </div>
-  </form>
+  </div>
 </div>
 </section>

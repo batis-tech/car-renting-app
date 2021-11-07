@@ -12,26 +12,40 @@
     </div>
     <div class=" grid grid-cols-5 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-4 gap-1  h-3/5">
       <%  @car.each do |car| %>
-        <div class="w9/12 h-3/5 rounded overflow-hidden shadow-lg">
-
-          <%= image_tag car.image.url ,class:"w-full h-3/5 p-4"%>
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2"><%= car.carmakes %></div>
-          </div>
-          <div class="px-6  pb-2">
-
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><%= car.caryears %></span>
+        <div class="w9/12 h-5/5 rounded overflow-hidden shadow-lg">
+          <%= image_tag car.image.url ,class:"w-full h-3/7 p-4"%>
+          <div class="h-4/6">
+            <div class="px-6 py-2">
+              <div class="font-bold text-xl mb-2"><%= car.carmakes %></div>
+            </div>
+            <div class="px-5 flex">
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 "><%= car.carmodels %></span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 "><%= car.caryears %></span>
+            </div>
+            <hr>
+            <div class="px-5 mt-2 block">
+              <span class="inline-block px-1 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 "><%= car.user.companyname %></span>
+              <span class="inline-block px-1 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 "><%= car.user.country_cont %>,
+                <%= car.user.state_cont %></span>
+            </div>
+            <hr>
+            <div class="px-5 mt-2">
+              <button
+                type="submit"
+                class="float-right group relative w-20 mb-2  py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                More
+              </button>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
-
     <div class="flex flex-col justify-center items-center my-5">
       <button
         type="submit"
         class="items-center group relative w-20   py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
         <span class="absolute left-0 inset-y-0 flex items-center pl-3"></span>
-        More
+        Book
       </button>
     </div>
   </div>

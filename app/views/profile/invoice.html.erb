@@ -1,89 +1,118 @@
-
-
-  <div>
+<div>
 
   <div class="flex h-screen overflow-y-hidden bg-white" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
     <div x-ref="loading" class="fixed inset-0 z-50 flex items-center justify-center text-white bg-black bg-opacity-50" style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)">
       Loading.....
     </div>
-    <%= render 'business/sidebar'%>
-    <div class="flex flex-col flex-1 h-full overflow-hidden">
+
+    <div class="flex flex-col flex-1 h-full ">
       <!-- Navbar -->
-      <%= render 'business/header'%>
       <!-- Main content -->
-      <main class="flex-1 max-h-full p-5 overflow-hidden overflow-y-scroll">
+      <main class="flex-1 max-h-full p-5  overflow-y-scroll">
         <!-- Main content header -->
-        <div class="flex flex-col items-start justify-between pb-6 space-y-4 border-b lg:items-center lg:space-y-0 lg:flex-row">
-          <h1 class="text-2xl font-semibold whitespace-nowrap">Invoices</h1>
-
+        <div class="header flex flex-col items-start justify-between pb-6 space-y-4 border-b lg:items-center lg:space-y-0 lg:flex-row">
+          <h1 class=" font text-2xl font-semibold whitespace-nowrap"><%= current_user.full_name %>'s profile</h1>
         </div>
-
         <!-- Start Content -->
-        <div class="grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4">
-
-          <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg">
+        <div class=" grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4 w-4/4">
+          <div class="card-column p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg">
             <div class="flex items-start justify-between">
               <div class="flex flex-col space-y-2">
                 <span class="text-gray-400">Total Payments</span>
-
               </div>
-
             </div>
             <div>
-              <span>$1599</span>
+              <span><%=  @ordePrices %>$</span>
             </div>
           </div>
-
-        </div>
-
-        <div class="flex flex-col mt-6">
-          <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-              <div class="overflow-hidden border-b border-gray-200 rounded-md shadow-md">
-                <table class="min-w-full overflow-x-scroll divide-y divide-gray-200">
-                  <thead class="bg-gray-50">
-                    <tr>
-                      <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                        Price
-                      </th>
-                      <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                        Status
-                      </th>
-                      <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                        Receipt number
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="bg-white divide-y divide-gray-200">
-                    <% @payment.each do |f|%>
-                      <% f.charges['data'].each do |d| %>
-                      <tr class="transition-all hover:bg-gray-100 hover:shadow-lg">
-
-                        <td class="px-6 py-4 whitespace-nowrap">
-                          <div class="text-sm text-gray-900"><%= f.payment_method_types[0] %></div>
-                          <div class="text-sm text-gray-500"></div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                          <span class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
-                            <%= f.amount %>
-                          </span>
-                        </td>
-                        <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap"><%= d.receipt_number %></td>
-                        <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                          <a target="_blank" href="<%= d.receipt_url %>" class="text-indigo-600 hover:text-indigo-900">Receipt</a>
-                        </td>
-                      </tr>
-                      <% end  %>
-                      <% end %>
-                  </tbody>
-                </table>
+          <div class="card-column p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg">
+            <div class="flex items-start justify-between">
+              <div class="flex flex-col space-y-2">
+                <span class="text-gray-400">Total Orders</span>
               </div>
             </div>
+            <div>
+              <span><%=  @numberOfOrde %></span>
+            </div>
           </div>
+        </div>
+        <div class="grid grid-cols-4">
+          <% @payment.each do |f| %>
+          <div class="receipt mt-10 ">
+            <!-- Order info -->
+            <div class="order">
+              <p>
+                Date : <%= f.created_at  %>
+              </p>
+
+            </div>
+            <hr>
+            <!-- Details -->
+            <div class="details">
+              <h3>
+                Details
+              </h3>
+              <div class="product">
+                  <h4>
+                    <%= f.car.carmakes  %>
+                  </h4>
+                  <p class="mt-1">
+                    modle: <%= f.car.carmodels  %>
+                  </p>
+                  <p class="mt-1">
+                      From:
+                    <span>
+                      <%= f.dateFrom  %>
+                    </span>
+                  </p>
+                  <p class="mt-1">
+                      To:
+                    <span>
+                      <%= f.dateTo  %>
+                    </span>
+                  </p>
+                  <p class="mt-1">
+                    Number of days: <%= f.number  %>
+                  </p>
+                  <p>
+
+                  </p>
+              </div>
+            </div>
+            <!-- Sub and total price -->
+            <div class="totalprice">
+              <p class="sub">
+                  Price per day:
+                <span>
+                  <%= f.price  %>$
+                </span>
+              </p>
+
+              <p class="del mt-2">
+              Number of days:
+                <span>
+                  <%= f.number  %>
+                </span>
+              </p>
+              <hr>
+              <p class="tot mt-2">
+                Total
+                <span>
+                  <% @total= (f.number).to_i * (f.price).to_i %>
+                  <%= if @total < 1
+                      (f.price).to_i
+                    else
+                    @total
+                  end %>
+                </span>
+              </p>
+            </div>
+          </div>
+          <% end %>
         </div>
       </main>
       <!-- Main footer -->
-      <footer class="flex items-center justify-between flex-shrink-0 p-4 border-t max-h-14">
+      <footer class="flex items-center justify-between flex-shrink-0 p-4 border-t max-h-14" style="margin-top:0">
         <div>K-WD &copy; 2021</div>
         <div class="text-sm">
           Made by batis

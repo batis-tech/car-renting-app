@@ -24,8 +24,13 @@
         <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Features</a>
 
         <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Marketplace</a>
-
-        <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Company</a>
+        <% if client_signed_in? %>
+        <%= link_to "Logout", destroy_user_session_path, class:"font-medium text-indigo-600 hover:text-indigo-500", method: :delete %>
+        <% elsif user_signed_in? %>
+        <%= link_to "Partner" ,client_session_path,class:"font-medium text-indigo-600 hover:text-indigo-500"%>
+        <% else %>
+        <%= link_to "Partner" ,client_session_path,class:"font-medium text-indigo-600 hover:text-indigo-500"%>
+        <% end %>
         <% if user_signed_in? %>
           <%= link_to "Logout", destroy_user_session_path, class:"font-medium text-indigo-600 hover:text-indigo-500", method: :delete %>
         <%  else %>
