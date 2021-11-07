@@ -39,7 +39,6 @@ Your business will need a merchant account in order to accept credit card paymen
 <img width="1430" alt="Screen Shot 2021-11-07 at 10 25 14 PM" src="https://user-images.githubusercontent.com/57042884/140659891-5c1773d2-cb70-4f9f-ac0b-66b0c3ea99a8.png">
 <img width="1433" alt="Screen Shot 2021-11-07 at 10 24 59 PM" src="https://user-images.githubusercontent.com/57042884/140659894-9aee2c5c-690b-4db7-9b7b-b98e85c887b9.png">
 <img width="1430" alt="Screen Shot 2021-11-07 at 10 27 44 PM" src="https://user-images.githubusercontent.com/57042884/140659899-254e1458-c904-4c30-8e52-731f16beec5e.png">
-<img width="1436" alt="Screen Shot 2021-11-07 at 10 18 59 PM" src="https://user-images.githubusercontent.com/57042884/140659903-4d5788b6-918c-46b7-a622-4258c67a1587.png">
 <img width="1438" alt="Screen Shot 2021-11-07 at 10 19 19 PM" src="https://user-images.githubusercontent.com/57042884/140659905-74c34846-5fec-4e74-8190-ec4721ec455e.png">
 
 
