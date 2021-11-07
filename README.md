@@ -1,6 +1,6 @@
 # Renter Line
 
- Renter Line is a car renting portal that has multiaccess for users to rent a car and for providers to share thier cars Through out the portal you can allocate your desired car and select the right price for you. this projoct was generated with [Rails 6](https://github.com/rails/rails) version 6.1.4.1 and Tailwind CSS framework [Tailwindcss]https://github.com/tailwindlabs/tailwindcsshttps://github.com/tailwindlabs/tailwindcss).
+ Renter Line is a car renting portal that has multiaccess for users to rent a car and for providers to share thier cars Through out the portal you can allocate your desired car and select the right price for you. this projoct was generated with [Rails 6](https://github.com/rails/rails) version 6.1.4.1 and Tailwind CSS framework [Tailwindcss]https://github.com/tailwindlabs/tailwindcss).
 
 # featuers
 - Two registration models for users and providers
