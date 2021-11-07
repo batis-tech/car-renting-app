@@ -36,7 +36,7 @@ Your business will need a merchant account in order to accept credit card paymen
 <img width="1433" alt="Screen Shot 2021-11-07 at 10 24 04 PM" src="https://user-images.githubusercontent.com/57042884/140659880-7ed63326-2e12-4418-9701-475c1772c320.png">
 <img width="1429" alt="Screen Shot 2021-11-07 at 10 24 16 PM" src="https://user-images.githubusercontent.com/57042884/140659884-f502b17a-ab8c-4355-a8be-76d2abf9af4d.png">
 <img width="1433" alt="Screen Shot 2021-11-07 at 10 24 29 PM" src="https://user-images.githubusercontent.com/57042884/140659885-f40fac90-5ee2-41cf-97c8-19c47ae6753b.png">
-<img width="1430" alt="Screen Shot 2021-11-07 at 10 25 14 PM" src="https://user-images.githubusercontent.com/57042884/140659891-5c1773d2-cb70-4f9f-ac0b-66b0c3ea99a8.png">
+<img width="1435" alt="Screen Shot 2021-11-07 at 10 24 45 PM" src="https://user-images.githubusercontent.com/57042884/140660042-381b8180-5ca5-4707-ba0a-e30c66cb2b46.png">
 <img width="1433" alt="Screen Shot 2021-11-07 at 10 24 59 PM" src="https://user-images.githubusercontent.com/57042884/140659894-9aee2c5c-690b-4db7-9b7b-b98e85c887b9.png">
 <img width="1430" alt="Screen Shot 2021-11-07 at 10 27 44 PM" src="https://user-images.githubusercontent.com/57042884/140659899-254e1458-c904-4c30-8e52-731f16beec5e.png">
 <img width="1438" alt="Screen Shot 2021-11-07 at 10 19 19 PM" src="https://user-images.githubusercontent.com/57042884/140659905-74c34846-5fec-4e74-8190-ec4721ec455e.png">
