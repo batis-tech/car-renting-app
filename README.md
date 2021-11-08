@@ -1,6 +1,6 @@
 # Renter Line
 
- Renter Line is a car renting portal that has multiaccess for users to rent a car and for providers to share thier cars Through out the portal you can allocate your desired car and select the right price for you. this projoct was generated with [Rails 6](https://github.com/rails/rails) version 6.1.4.1 and Tailwind CSS framework  [Tailwind](https://github.com/tailwindlabs/tailwindcss).
+ Renter Line is a car renting portal that has multiaccess for users to rent a car and for providers to share their cars Through out the portal you can allocate your desired car and select the right price for you. this projoct was generated with [Rails 6](https://github.com/rails/rails) version 6.1.4.1 and Tailwind CSS framework  [Tailwind](https://github.com/tailwindlabs/tailwindcss).
 
 # featuers
 - Two registration models for users and providers
@@ -9,7 +9,7 @@
 - Car models and makers filter
 - AWS S3 (object storage through a web service interface, scalable storage infrastructure)
 - Integration with stripe PaymentIntent(A PaymentIntent guides you through the process of collecting a payment from your customer)
-- Provider Dashboard to recive paid orders 
+- Provider Dashboard to receive paid orders 
 
 # Deployment
 - Ruby on Rails powers the REST API and other web pages
@@ -21,6 +21,11 @@ Get the accounts you will need before deploying the application.
 
 Email
 Devise provides a “Forgot Password?” feature that resets a password and sends instructions to the user. You’ll need an email service provider to send email from the application. You can use Gmail during development. You can get a free Gmail account if you don’t already have one. For production, Gmail is not robust. Use transactional email services, such as Mandrill, to send email in production. See the article Send Email with Rails for more information.
+
+AWS S3 
+Open https://portal.aws.amazon.com/billing/signup.
+Follow the online instructions.
+Part of the sign-up procedure involves receiving a phone call and entering a verification code on the phone keypad.
 
 Stripe
 A Stripe account is required. Before you start, go to the Stripe website and set up an account. You don’t need a credit card merchant account or payment gateway. There’s no approval process to delay getting started.
